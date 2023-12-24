@@ -1,5 +1,5 @@
-// Leetcode #242
-// Neetcode #2
+// Leetcode     #0242
+// Neetcode 150 #0002
 
 /*
 Given two strings s and t, return true if t is an anagram of s, and false otherwise.
@@ -49,7 +49,7 @@ impl Solution {
 mod tests {
     use super::*;
     #[test]
-    fn test_242() {
+    fn test_0242() {
         assert_eq!(Solution::is_anagram(String::from("anagram"), String::from("nagaram")), true);
         assert_eq!(Solution::is_anagram(String::from("rat"), String::from("car")), false);
         assert_eq!(Solution::is_anagram(String::from("biganagram"), String::from("no")), false);
