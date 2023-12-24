@@ -35,23 +35,19 @@ Constraints:
 
  */
 
-pub struct Solution {}
+pub fn two_sum(nums: Vec<i32>, target: i32) -> Vec<i32> {
+    if nums.len() < 2 {return Vec::new()}
 
-impl Solution {
-    pub fn two_sum(nums: Vec<i32>, target: i32) -> Vec<i32> {
-        if nums.len() < 2 {return Vec::new()}
-
-        for i in 0..nums.len() {
-            let current = nums[i];
-            for j in (i + 1)..nums.len() {
-                let other = nums[j];
-                if current + other == target {
-                    return Vec::from([i as i32, j as i32])
-                }
+    for i in 0..nums.len() {
+        let current = nums[i];
+        for j in (i + 1)..nums.len() {
+            let other = nums[j];
+            if current + other == target {
+                return Vec::from([i as i32, j as i32])
             }
         }
-        return Vec::new()
     }
+    return Vec::new()
 }
 
 #[cfg(test)]
@@ -59,8 +55,8 @@ mod tests {
     use super::*;
     #[test]
     fn test_0001() {
-        assert_eq!(Solution::two_sum(Vec::from([2, 7, 11, 15, 9]), 9), [0, 1]);
-        assert_eq!(Solution::two_sum(Vec::from([3, 2, 4]), 6), [1, 2]);
-        assert_eq!(Solution::two_sum(Vec::from([3, 3]), 6), [0, 1]);
+        assert_eq!(two_sum(Vec::from([2, 7, 11, 15, 9]), 9), [0, 1]);
+        assert_eq!(two_sum(Vec::from([3, 2, 4]), 6), [1, 2]);
+        assert_eq!(two_sum(Vec::from([3, 3]), 6), [0, 1]);
     }
 }
